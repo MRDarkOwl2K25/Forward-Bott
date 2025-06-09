@@ -23,16 +23,9 @@ class Database:
         self._client = motor.motor_asyncio.AsyncIOMotorClient(
             uri,
             tlsCAFile=certifi.where(),
-            tlsAllowInvalidCertificates=False,
-            tlsAllowInvalidHostnames=False,
-            serverSelectionTimeoutMS=30000,
-            connectTimeoutMS=30000,
-            socketTimeoutMS=30000,
-            retryWrites=True,
-            retryReads=True,
-            maxPoolSize=50,
-            minPoolSize=10,
-            tls=True
+            serverSelectionTimeoutMS=5000,
+            connectTimeoutMS=10000,
+            socketTimeoutMS=10000
         )
         self.db = self._client[database_name]
         self.bot = self.db.bots

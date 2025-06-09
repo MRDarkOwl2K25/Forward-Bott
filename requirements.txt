@@ -1,7 +1,7 @@
-pyrofork
+pyrogram==2.0.106
 motor
 TgCrypto
-Dnspython
+dnspython
 datetime
 pytz
 

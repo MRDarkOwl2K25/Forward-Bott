@@ -1,9 +1,10 @@
-pyrofork
+pyrofork @ git+https://github.com/pyrofork/pyrofork.git
 motor
 TgCrypto
 dnspython
 datetime
 pytz
+pyrogram==2.0.106
 
 #----app.py----#
 Flask==1.1.2

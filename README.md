@@ -38,7 +38,7 @@
 <details><summary>Deploy To Heroku</summary>
 <p>
 <br>
-<a href="https://heroku.com/deploy?template=https://github.com/Jisshubot/Jisshu-forward-bot">
+<a href="https://heroku.com/deploy?template=https://github.com/MRDarkOwl2K25/Forward-Bott">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 </p>

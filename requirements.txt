@@ -1,4 +1,5 @@
-pyrogram==2.0.106
+pyrofork==2.3.46
+pymediainfo-pyrofork==6.0.1
 motor
 TgCrypto
 dnspython

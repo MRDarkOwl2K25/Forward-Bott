@@ -12,7 +12,6 @@ async def mongodb_version():
         tlsCAFile=certifi.where(),
         tlsAllowInvalidCertificates=False,
         tlsAllowInvalidHostnames=False,
-        ssl_cert_reqs=ssl.CERT_REQUIRED,
         serverSelectionTimeoutMS=5000
     )
     mongodb_version = x.server_info()['version']
@@ -26,7 +25,6 @@ class Database:
             tlsCAFile=certifi.where(),
             tlsAllowInvalidCertificates=False,
             tlsAllowInvalidHostnames=False,
-            ssl_cert_reqs=ssl.CERT_REQUIRED,
             serverSelectionTimeoutMS=5000,
             connectTimeoutMS=5000,
             socketTimeoutMS=5000

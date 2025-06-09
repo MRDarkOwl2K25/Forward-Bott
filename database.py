@@ -3,16 +3,17 @@ from os import environ
 from config import Config
 import motor.motor_asyncio
 from pymongo import MongoClient
+import certifi
 
 async def mongodb_version():
-    x = MongoClient(Config.DATABASE_URI)
+    x = MongoClient(Config.DATABASE_URI, tlsCAFile=certifi.where())
     mongodb_version = x.server_info()['version']
     return mongodb_version
 
 class Database:
     
     def __init__(self, uri, database_name):
-        self._client = motor.motor_asyncio.AsyncIOMotorClient(uri)
+        self._client = motor.motor_asyncio.AsyncIOMotorClient(uri, tlsCAFile=certifi.where())
         self.db = self._client[database_name]
         self.bot = self.db.bots
         self.col = self.db.users

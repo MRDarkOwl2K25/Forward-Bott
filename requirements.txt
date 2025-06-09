@@ -1,5 +1,4 @@
-pyrofork==2.3.46
-pymediainfo-pyrofork==6.0.1
+pyrofork @ git+https://github.com/pyrofork/pyrofork.git
 motor
 TgCrypto
 dnspython

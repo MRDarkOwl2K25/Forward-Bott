@@ -1,4 +1,4 @@
-pyrofork @ git+https://github.com/pyrofork/pyrofork.git
+pyrofork
 motor
 TgCrypto
 dnspython

@@ -32,8 +32,7 @@ class Database:
             retryReads=True,
             maxPoolSize=50,
             minPoolSize=10,
-            ssl=True,
-            ssl_cert_reqs=ssl.CERT_REQUIRED
+            tls=True
         )
         self.db = self._client[database_name]
         self.bot = self.db.bots

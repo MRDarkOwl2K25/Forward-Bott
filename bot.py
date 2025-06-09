@@ -3,10 +3,10 @@ import logging
 import logging.config
 from database import db 
 from config import Config  
-from pyrogram import Client, __version__
-from pyrogram.raw.all import layer 
-from pyrogram.enums import ParseMode
-from pyrogram.errors import FloodWait 
+from pyrofork import Client, __version__
+from pyrofork.raw.all import layer 
+from pyrofork.enums import ParseMode
+from pyrofork.errors import FloodWait 
 # bot developer @mr_jisshu
 logging.config.fileConfig('logging.conf')
 logging.getLogger().setLevel(logging.INFO)

@@ -4,16 +4,33 @@ from config import Config
 import motor.motor_asyncio
 from pymongo import MongoClient
 import certifi
+import ssl
 
 async def mongodb_version():
-    x = MongoClient(Config.DATABASE_URI, tlsCAFile=certifi.where())
+    x = MongoClient(
+        Config.DATABASE_URI,
+        tlsCAFile=certifi.where(),
+        tlsAllowInvalidCertificates=False,
+        tlsAllowInvalidHostnames=False,
+        ssl_cert_reqs=ssl.CERT_REQUIRED,
+        serverSelectionTimeoutMS=5000
+    )
     mongodb_version = x.server_info()['version']
     return mongodb_version
 
 class Database:
     
     def __init__(self, uri, database_name):
-        self._client = motor.motor_asyncio.AsyncIOMotorClient(uri, tlsCAFile=certifi.where())
+        self._client = motor.motor_asyncio.AsyncIOMotorClient(
+            uri,
+            tlsCAFile=certifi.where(),
+            tlsAllowInvalidCertificates=False,
+            tlsAllowInvalidHostnames=False,
+            ssl_cert_reqs=ssl.CERT_REQUIRED,
+            serverSelectionTimeoutMS=5000,
+            connectTimeoutMS=5000,
+            socketTimeoutMS=5000
+        )
         self.db = self._client[database_name]
         self.bot = self.db.bots
         self.col = self.db.users
